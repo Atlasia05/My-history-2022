@@ -1,0 +1,287 @@
+body {
+    overflow-x: hidden;
+}
+#loading {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 3;
+    animation: ending 1.9s forwards;
+}
+#visual ~ footer {
+    position: absolute;
+    top: 190vh;
+}
+#loading > #load-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40vw;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#loading > #load-form > p {
+    margin-top: 4vh;
+    margin-left: 15.5vw;
+    font-size: 3vw;
+    color: #2f2f2f;
+    font-weight: 900;
+}
+#loading > #load-form > #line {
+    width: 35vw;
+    height: 10vh;
+    margin-top: 1vh;
+    margin-left: 2.5vw;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    
+}
+#loading > #load-form > #line > div {
+    background-color: #2f2f2f;
+    height: 2vh;
+    margin-top: 0.5vh;
+    margin-right: 1vw;
+    border: 1px solid rgb(0, 0, 0,0.1);
+    width: 1vw;
+    border-radius: 50%;
+    
+}
+#loading > #load-form > #line > div:first-child {
+    margin-left: 13.5vw;
+    animation-name: load;
+    animation-delay: 0s;
+    animation-duration: 0.8s;
+    animation-iteration-count: 3;
+    background-color: #b7d5ac;
+}
+#loading > #load-form > #line > div:nth-of-type(2) {
+    animation-name: load;
+    animation-delay: 0.2s;
+    animation-duration: 0.8s;
+    animation-iteration-count: 3;
+    background-color: #93bf85;
+}
+#loading > #load-form > #line > div:nth-of-type(3) {
+    animation-name: load;
+    animation-delay: 0.4s;
+    animation-duration: 0.8s;
+    animation-iteration-count: 3;
+    background-color: #93bf85;
+}
+@keyframes load {
+    0% {margin-top: 0vh;}
+    50% {margin-top: -2.5vh;}
+    100%{margin-top: 0vh;}    
+}
+@keyframes ending {
+    0% {visibility: visible; opacity: 1;}
+    80% {visibility: visible; opacity: 1;}
+    99.9% {visibility: visible;}
+    100% {visibility: hidden; opacity: 0;}
+}
+/*  ---------- 로딩 영역 ----------  */
+#visual {
+    position: absolute;
+    top: 10vh;
+    width: 100vw;
+    height: 70vh;
+    scroll-snap-type: y mandatory;
+    overflow: auto;
+    cursor: n-resize;
+}
+#visual::-webkit-scrollbar {
+    display: none;
+}
+.slider > .img {
+    scroll-snap-align: start;
+    width: 100%;
+    height: 70vh;
+    position: relative;
+}
+.img img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.img p {
+    position: absolute;
+    background-color: rgb(51, 51, 51, 0.8);
+    color: white;
+    width: 15vw;
+    height: 10vh;
+    font-size: 18px;
+    text-align: center;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* ---------- 비쥬얼 영역 ---------- */
+
+#recomend {
+    position: absolute;
+    top: 80vh;
+    width: 100vw;
+    height: 10vh;
+    background-color: rgba(67, 150, 121, 0.8);
+}
+#recomend > .recomend-box {
+    margin-left: 10vw;
+    width: 80vw;
+    height: 100%;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+#recomend > .recomend-box h1 {
+    position: absolute;
+    width: 30vw;
+    height: 10vh;
+    font-size: 2.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #222;
+}
+#recomend > .recomend-box .bunch {
+    margin: 0;
+    padding: 0;
+    width: 50vw;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 30vw;
+    animation: slideText 12s infinite;
+}
+#recomend > .recomend-box .bunch:nth-of-type(2) {
+    top: 9.8vh;
+}
+#recomend > .recomend-box .bunch:nth-of-type(3) {
+    top: 19.6vh;
+}
+#recomend > .recomend-box .bunch:nth-of-type(4) {
+    top: 29.4vh;
+}
+#recomend > .recomend-box .bunch p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2vw;
+    color: #222;
+    font-weight: 600;
+}
+#recomend > .recomend-box .bunch p:nth-child(1) {
+    width: 30%;
+    height: 100%;
+}
+#recomend > .recomend-box .bunch p:nth-child(2) {
+    width: 50%;
+    height: 100%;
+}
+#recomend > .recomend-box .bunch p:nth-child(3) {
+    width: 20%;
+    height: 100%;
+}
+@keyframes slideText {
+    0%{transform: translateY(0vh);}
+    16.5% {transform: translateY(0vh);}
+    33%{transform: translateY(-9.8vh);}
+    49.5% {transform: translateY(-9.8vh);}
+    66%{transform: translateY(-19.6vh);}
+    82.5% {transform: translateY(-19.6vh);}
+    100%{transform: translateY(-29.4vh);}
+}
+/* --------------- recomend 끝 ---------------*/
+#gallery {
+    position: absolute;
+    top: 90vh;
+    left: 10vw;
+    border: 1px solid black;
+    width: 80vw;
+    height: 55vh;
+}
+#gallery > h1{
+    margin-top: 1vh;
+    font-size: 2.5vw;
+}
+#gallery > div {
+    margin-top: 5vh;
+    border: 1px solid black;
+    width: 100%;
+    height: 40vh;
+}
+/* ---------------- gallery 끝 ---------------*/
+#event {
+    position: absolute;
+    top: 145vh;
+    width: 100vw;
+    height: 50vh;
+    background-color: rgb(236, 236, 236);
+}
+#event > h1 {
+    margin-left: 10vw;
+    margin-top: 1vh;
+    margin-bottom: 5vh;
+    font-size: 2.5vw;
+}
+#eventZone {
+    margin-left: 10vw;
+    width: 80%;
+    height: 25vh;
+    display: flex;
+    justify-content: space-between;
+}
+#eventZone > div {
+    box-shadow: 0px 0px 3px black;
+    border-radius: 15px;
+    width: 22%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: white;
+}
+#eventZone > div h1 {
+    font-size: 1.8vw;
+}
+.upBox {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 100%;
+    /* left: 10%; */
+    transition: 0.5s;
+    background-color: rgba(67, 150, 121, 0.1);
+}
+#eventZone > div:hover > .upBox {
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgb(59, 124, 101, 0.95);
+}
+#eventZone > div > .upBox h2 {
+    margin-top: 10%;
+    margin-left: 10%;
+    width: 80%;
+    text-align: center;
+    font-size: 1.5vw;
+    color: white;
+}
+#eventZone > div > .upBox p {
+    margin-top: 10%;
+    margin-left: 10%;
+    width: 80%;
+    text-align: center;
+    font-size: 1vw;
+    color: white;
+}

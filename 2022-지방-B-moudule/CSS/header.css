@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: black;
+    list-style: none;
+}
+
+input[name="sub"] {
+    display: none;
+}
+header {
+    width: 100%;
+    height: 9vh;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+    background-color: white;
+}
+#subMenu:hover ~ header {
+    height: 25vh;
+    background-color: white;
+}
+header > .logo {
+    overflow-y: hidden;
+    margin-left: 10vw;
+    width: 17vw;
+    height: 8vh;
+}
+header > .logo img {
+    margin-top: 1vh;
+    object-fit: cover;
+    height: 8vh;
+}
+header > #depth1 {
+    display: flex;
+    width: 35vw;
+    height: 9vh;
+    margin-top: 1vh;
+    margin-left: 13vw;
+    display: flex;
+    justify-content: space-between;
+
+}
+header > #depth1 > a {
+    margin-top: 3vh;
+    width: 25%;
+    height: 50%;
+    font-size: 1.2vw;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.1s;
+}
+header > #depth1 > a:hover {
+    color: rgb(0, 154, 0);
+}
+#convenience {
+    margin-top: 4vh;
+    margin-left: 7vw;
+    width: 8vw;
+    height: 3vh;
+    border-radius: 50px;
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#convenience > a,span {
+    color: whitesmoke;
+    font-weight: 600;
+    margin: 0px 5px;
+}
+#convenience > span {
+    display: inline-block;
+    margin-top: -2px;
+}
+
+header > #depth2 {
+    position: absolute;
+    z-index: 2;
+    width: 100vw;
+    top: 10vh;
+    background-color: white;
+    height: 14vh;
+    border-top: 2px solid rgb(0, 0, 0, 0.3);
+    border-bottom: 2px solid rgb(0, 0, 0);
+    transition: 0.3s;
+}
+#depth2 > ul {
+    display: flex;
+    width: 35vw;
+    height: 12vh;
+    margin-top: 1vh;
+    margin-left: 40vw;
+    display: flex;
+    justify-content: space-between;
+}
+#depth2 > ul > li {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+}
+#depth2 > ul > li > a {
+    width: 100%;
+    height: 33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9vw;
+    font-weight: 600;
+    transition: 0.1s;
+}
+#depth2 > ul > li > a:hover {
+    color: rgb(0, 154, 0);
+}
